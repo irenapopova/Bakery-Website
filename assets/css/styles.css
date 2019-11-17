@@ -32,7 +32,7 @@ ul {
 
 header.hero {
   background: radial-gradient(circle, rgba(86,83,76,0.5), transparent),
-  url("../images/hero.jpg") no-repeat center center / cover;
+  url("../images/hero5.jpg") no-repeat center center / cover;
   color: #fff;
   position: relative;
 }
