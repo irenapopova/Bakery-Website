@@ -317,7 +317,7 @@ blockquote::after {
 
 /* PANCAKES */
 .pancakes {
-  background: url("../images/bg-slides.jpg") no-repeat center center / cover;
+  background: url("../images/bg-slides2.jpg") no-repeat center center / cover;
   overflow: auto;
 }
 
@@ -437,7 +437,7 @@ fieldset:not(:checked) label:hover ~ label {
   padding: 100px 10%;
   display: flex;
   justify-content: space-between;
-  background: url("../images/bg-breakfast.jpg") no-repeat center center / cover;
+  background: url("../images/breakfast.jpg") no-repeat center center / cover;
 }
 
 .breakfast .text {
