@@ -1,0 +1,161 @@
+/* =========================
+   Contact Page Styles
+========================= */
+
+body.contact-page {
+  font-family: 'Alegreya', serif;
+  background-color: #fff7f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #b04e27; /* warm bakery color */
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+/* =========================
+   Contact Form
+========================= */
+.contact-form {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #b04e27;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #e0cfc1;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #fff3ea;
+  color: #333;
+  transition: border 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #b04e27;
+}
+
+.contact-form button.button {
+  background-color: #b04e27;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button.button:hover {
+  background-color: #90381f;
+}
+
+/* =========================
+   Contact Info
+========================= */
+.contact-info {
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: left;
+  padding: 20px;
+}
+
+.contact-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #b04e27;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.contact-info .social-media {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.contact-info .social-media li {
+  list-style: none;
+}
+
+.contact-info .social-media a {
+  font-size: 1.4rem;
+  color: #b04e27;
+  transition: color 0.3s ease;
+}
+
+.contact-info .social-media a:hover {
+  color: #90381f;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-form,
+  .contact-info {
+    max-width: 100%;
+  }
+}
+.contact-info .social-media {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.contact-info .social-media li {
+  list-style: none;
+}
+
+.contact-info .social-media a {
+  font-size: 1.4rem;
+  color: #b04e27;
+  transition: color 0.3s ease;
+}
+
+.contact-info .social-media a:hover {
+  color: #90381f;
+}
