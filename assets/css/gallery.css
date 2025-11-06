@@ -304,6 +304,427 @@ body.gallery-page footer a.logo .logo-img {
   margin: 5px 0;
 }
 
+/* =========================
+   gallery.css - Enhancements
+   Added only new features: hover/focus effects, rotate effect, improved responsiveness
+========================= */
+
 /* -------------------------
-   End of gallery.css
+   Enhanced Hover & Focus Effects
 ------------------------- */
+
+/* Add focus outline for accessibility: keyboard users can see which gallery item is focused */
+.gallery-item:focus-within,
+.gallery-item a:focus {
+  outline: 3px solid #a47d5e; /* visible orange outline */
+  outline-offset: 5px;
+}
+
+/* Add smooth transition for images including brightness filter */
+.gallery-item img {
+  transition: transform 0.5s ease, filter 0.5s ease; /* added filter for brightness effect */
+}
+
+/* Hover & Focus Effects for gallery images */
+.gallery-item:hover img,
+.gallery-item:focus-within img {
+  transform: scale(1.08) translateY(-5px) rotate(2deg); /* scale + slight lift + small rotation */
+  filter: brightness(1.05); /* subtle brightening on hover/focus */
+}
+
+/* Navbar link keyboard focus indication */
+header.hero nav ul.main-nav li a:focus {
+  outline: 2px dashed #fff; /* visible outline for accessibility */
+  outline-offset: 4px;
+}
+
+/* Dropdown menu focus style */
+header.hero nav ul.main-nav li.dropdown ul.dropdown-content li a:focus {
+  background-color: #f4e9dc; /* highlight background matches hover */
+  outline: none;
+}
+
+/* Hero button focus style for keyboard navigation */
+header.hero .intro .button:focus {
+  outline: 3px solid #fff; /* visible focus outline */
+  outline-offset: 3px;
+}
+
+/* -------------------------
+   Improved Responsiveness
+------------------------- */
+
+/* Tablet devices: widths up to 900px */
+@media screen and (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr); /* reduce columns from 4 to 2 */
+    gap: 20px; /* reduce gap slightly */
+  }
+
+  header.hero .intro h1 {
+    font-size: 2.2rem; /* smaller hero heading */
+  }
+
+  header.hero .intro p {
+    font-size: 1.2rem; /* smaller hero paragraph */
+  }
+
+  header.hero nav a.logo {
+    font-size: 36px; /* reduce logo size */
+  }
+
+  header.hero nav a.logo .logo-text.top,
+  header.hero nav a.logo .logo-text.bottom {
+    font-size: 20px; /* reduce stacked logo text */
+  }
+}
+
+/* Mobile devices: widths up to 600px */
+@media screen and (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr; /* single column for mobile */
+    gap: 15px;
+  }
+
+  header.hero nav {
+    flex-direction: column; /* stack nav items vertically */
+    padding: 10px 5%;
+  }
+
+  header.hero nav ul.main-nav {
+    flex-direction: column; /* stack nav links vertically */
+    gap: 5px;
+    align-items: center;
+  }
+
+  header.hero .intro h1 {
+    font-size: 1.8rem; /* smaller heading for mobile */
+  }
+
+  header.hero .intro p {
+    font-size: 1rem;
+    max-width: 90%; /* allow more space for text */
+  }
+
+  header.hero .intro .button {
+    width: 80%; /* button almost full width */
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  header.hero nav a.logo {
+    font-size: 28px; /* reduce logo text size */
+  }
+
+  header.hero nav a.logo .logo-text.top,
+  header.hero nav a.logo .logo-text.bottom {
+    font-size: 16px; /* reduce stacked logo text */
+  }
+}
+
+/* -------------------------
+   Optional: Smooth Scroll for anchor links
+   Improves UX when clicking nav links
+------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* -------------------------
+   End of Enhancements
+------------------------- */
+
+/* -------------------------
+   Lightbox Styles
+   Shows image in full screen when clicked
+------------------------- */
+/* =========================
+   Lightbox Styles
+========================= */
+#lightbox {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9); /* dark overlay */
+  justify-content: center; /* center image horizontally */
+  align-items: center; /* center image vertically */
+  z-index: 9999;
+  flex-direction: column;
+  cursor: default;
+}
+
+#lightbox img {
+  max-width: 90%; /* scale to viewport */
+  max-height: 80vh; /* scale to viewport height */
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+#lightbox img:hover {
+  transform: scale(1.02); /* slight zoom on hover */
+}
+
+/* Close button */
+#lightbox .close-btn {
+  color: #fff;
+  font-size: 2rem;
+  margin-top: 20px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  padding: 5px 10px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+#lightbox .close-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* =========================
+   Gallery Hover & Focus Effects - Updated
+   Added rotate effect and ensured it works
+========================= */
+.gallery-item {
+  position: relative;
+  overflow: hidden; /* ensures transform does not overflow */
+  cursor: pointer;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-within img {
+  transform: scale(1.1) rotate(5deg); /* slightly larger scale + rotation */
+  filter: brightness(1.1); /* brighten slightly on hover */
+}
+
+/* =========================
+   Lightbox - Updated
+   Large image + Close button top-right
+========================= */
+#lightbox {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95); /* darker overlay */
+  justify-content: center; /* center image horizontally */
+  align-items: center; /* center image vertically */
+  z-index: 9999;
+  cursor: default;
+}
+
+#lightbox img {
+  max-width: 95%; /* larger image */
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+  transition: transform 0.3s ease;
+}
+
+#lightbox img:hover {
+  transform: scale(1.02); /* slight zoom on hover */
+}
+
+/* Close button positioned top-right corner */
+#lightbox .close-btn {
+  position: absolute; /* absolute positioning */
+  top: 20px;          /* distance from top */
+  right: 20px;        /* distance from right */
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  padding: 5px 10px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+#lightbox .close-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* =========================
+   Gallery Hover & Focus Effects - Final
+========================= */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.5s ease, filter 0.5s ease, box-shadow 0.5s ease;
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-within img {
+  transform: scale(1.08) rotate(3deg); /* scale + rotation */
+  filter: brightness(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3); /* subtle shadow on hover */
+}
+
+/* =========================
+   Lightbox Styles - Final
+========================= */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: default;
+  overflow: auto;
+  padding: 20px; /* spacing for smaller screens */
+  box-sizing: border-box;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform: rotate(0deg);
+}
+
+#lightbox img:hover {
+  transform: scale(1.02) rotate(1deg); /* slight rotation + zoom on hover */
+  box-shadow: 0 16px 40px rgba(0,0,0,0.8);
+}
+
+/* Close button positioned top-right of the image */
+#lightbox .close-btn {
+  position: absolute;
+  top: calc(50% - 45%); /* aligned relative to image */
+  right: calc(50% - 45%);
+  transform: translate(50%, -50%);
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  padding: 5px 10px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  z-index: 10000; /* above the image */
+}
+
+#lightbox .close-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* -------------------------
+   End of existing gallery styles
+------------------------- */
+
+/* =========================
+   Gallery Grid Hover Animation - Rotate Box
+   Applies rotate + scale + shadow on hover for each gallery item
+========================= */
+.gallery-item {
+  position: relative;
+
+  cursor: pointer;
+  border-radius: 12px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.gallery-item:hover,
+.gallery-item:focus-within {
+  transform: rotate(3deg) scale(1.05); /* rotate box slightly + scale */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25); /* shadow on hover */
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-within img {
+  transform: scale(1.08); /* slight image scale independently */
+  filter: brightness(1.05); /* brighten image slightly */
+}
+
+/* =========================
+   End of Gallery Hover Enhancements
+========================= */
+
+/* =========================
+   Gallery Hover + Dark Shadow Bottom & Right - Fixed
+   Adds rotate, scale, and visible shadow on hover
+========================= */
+/* =========================
+   Gallery Hover + Rotate + Dark Shadow
+========================= */
+
+/* Base gallery item */
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px; /* 3D effect */
+  z-index: 1;
+  overflow: visible; /* allow shadow outside */
+}
+
+/* Wrapper carries shadow */
+.gallery-item .img-wrapper {
+  display: inline-block;
+  border-radius: 12px;
+  overflow: visible; /* show shadow outside */
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.7); /* darker shadow bottom-right */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  background: #fff; /* optional */
+}
+
+/* Image inside wrapper */
+.gallery-item .img-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Hover / Focus Effects */
+.gallery-item:hover,
+.gallery-item:focus-within {
+  z-index: 10; /* bring hovered item above others */
+}
+
+.gallery-item:hover .img-wrapper,
+.gallery-item:focus-within .img-wrapper {
+  transform: rotate(4deg) scale(1.07); /* rotate + scale box */
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.85); /* darker, larger shadow bottom-right */
+}
+
+.gallery-item:hover .img-wrapper img,
+.gallery-item:focus-within .img-wrapper img {
+  transform: scale(1.1); /* image zoom */
+  filter: brightness(1.1); /* brighten slightly */
+}

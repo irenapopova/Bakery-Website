@@ -64,3 +64,18 @@
   });
 })();
 
+function openLightbox(src) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  lightboxImg.src = src;
+  lightbox.style.display = 'flex'; // show lightbox
+  document.body.style.overflow = 'hidden'; // prevent background scrolling
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.style.display = 'none'; // hide lightbox
+  document.body.style.overflow = 'auto'; // restore scrolling
+}
+
+
