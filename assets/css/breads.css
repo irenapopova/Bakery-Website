@@ -1,0 +1,106 @@
+
+/* breads.css */
+
+/* breads.css */
+
+/* Scope all page-specific styles */
+body.breads-page {
+  background-color: #fff8f0; /* page background */
+}
+
+/* Hero Section - keep title and text white */
+header.hero .intro h1,
+header.hero .intro p {
+  color: #fff; /* override any previous color */
+}
+
+/* Breads Section */
+.breads-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.breads-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #a47d5e;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Bread Gallery */
+.bread-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.bread-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 250px;
+  padding: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bread-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.bread-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.bread-card h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #56534c;
+  font-family: 'Alegreya', serif;
+}
+
+.bread-card p {
+  font-size: 14px;
+  color: #555;
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 900px) {
+  .bread-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Ensure Footer is visible */
+body.breads-page footer {
+  display: block;
+  padding: 70px 10%;
+  background-color: #f3f1e9;
+  text-align: center;
+}
+
+body.breads-page footer a {
+  color: #35332f;
+}
+
+body.breads-page footer .main-nav a:hover {
+  color: #a47d5e;
+}
+
+/* Optional: override nav separators for breads page */
+body.breads-page .main-nav li:not(:last-of-type)::after {
+  content: '~';
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+body.breads-page .main-nav li.dropdown:last-of-type::after {
+  content: '';
+}

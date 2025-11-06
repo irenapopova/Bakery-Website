@@ -112,6 +112,80 @@ header nav .main-nav {
   }
 }
 
+/* ~ dropdown nav SECTION ~ */
+
+
+/* --- Dropdown Menu (integrated with flex layout) --- */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* keep text consistent with other nav links */
+.dropdown > a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  padding: 0 8px;
+}
+
+/* dropdown menu container */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  padding: 5px 0; /* optional spacing */
+  margin: 0;       /* prevents hover gap */
+  list-style: none;
+  z-index: 1000;   /* ensure on top */
+}
+
+/* Show dropdown when hovering OR when open via JS */
+.dropdown:hover .dropdown-content,
+.dropdown.open .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+}
+
+
+/* dropdown link styling */
+.dropdown-content li a {
+  margin-top: 0; /* prevents disappearing when moving mouse */
+  color: #333;
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  font-family: "Alegreya", serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f8f8f8;
+  color: #d47b36;
+}
+
+/* Fix alignment issues with separators (~) */
+.main-nav li.dropdown::after {
+  content: '~';
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.main-nav li.dropdown:last-of-type::after {
+  content: '';
+}
+
+/* INTRO SECTION */
+
 .intro {
   text-align: center;
   overflow: auto;
