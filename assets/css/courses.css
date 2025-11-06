@@ -1,0 +1,99 @@
+/* =========================
+   Courses Page Styles
+========================= */
+
+body.courses-page {
+  font-family: 'Alegreya', serif;
+  background-color: #fff7f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.courses-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.courses-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #b04e27;
+}
+
+/* =========================
+   Course Grid
+========================= */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Course Card
+========================= */
+.course-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.course-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.course-content {
+  padding: 25px;
+  text-align: left;
+}
+
+.course-content h3 {
+  color: #b04e27;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.course-content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.course-content .details {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.course-content .button {
+  display: inline-block;
+  background-color: #b04e27;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.course-content .button:hover {
+  background-color: #90381f;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+  .course-content {
+    text-align: center;
+  }
+}
