@@ -1,0 +1,119 @@
+/* =========================
+   BLOG POST STYLES
+========================= */
+.blog-container {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.blog-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  text-align: center;
+  color: #a47d5e;
+  margin-bottom: 10px;
+}
+
+.blog-author {
+  text-align: center;
+  font-style: italic;
+  color: #7b5b4c;
+  margin-bottom: 50px;
+}
+
+.blog-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* IMAGE LEFT / TEXT RIGHT SECTION */
+.img-text-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.section-image {
+  flex: 1 1 45%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.section-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.section-text {
+  flex: 1 1 50%;
+}
+
+.section-text h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  color: #a47d5e;
+  margin-bottom: 15px;
+}
+
+.section-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.text-below p {
+  margin-top: 15px;
+}
+
+
+.sourdough-benefits ul {
+  list-style-type: decimal; /* bullet points */
+  padding-left: 20px;    /* indent the bullets */
+  margin-top: 10px;
+  display: block !important;
+}
+
+.sourdough-benefits li {
+  margin-bottom: 15px;   /* space between items */
+  line-height: 1.6;      /* makes text more readable */
+}
+
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 900px) {
+  .img-text-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-image,
+  .section-text {
+    flex: 1 1 100%;
+  }
+
+  .section-image {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blog-title {
+    font-size: 2.2rem;
+  }
+
+  .section-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .blog-content p,
+  .section-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
