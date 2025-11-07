@@ -1,0 +1,573 @@
+/* pastries.css */
+/* Scope all page-specific styles */
+/* ==========================
+   PAGE-SPECIFIC STYLES
+========================== */
+/* =========================================
+   GLOBAL PAGE STYLES
+========================================= */
+body.pastries-page {
+  background-color: #fff8f0;
+  font-family: 'Proxima Nova', sans-serif;
+  color: #56534c;
+  margin: 0;
+  padding: 0;
+}
+
+
+header.hero .intro h1 {
+  margin-top: 25px;  /* remove extra space above title */
+  margin-bottom: 10px; /* keep some space between title and text */
+}
+
+header.hero .intro .button {
+  margin-top: 10px; /* space below paragraph */
+}
+/* =========================================
+   1. ART OF PASTRY MAKING SECTION
+   (Introductory two-column section)
+========================================= */
+.art-of-pastries {
+  background-color: #fff8f0;
+  padding: 100px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #e8e1d7;
+}
+
+.art-of-pastries-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+  max-width: 1100px;
+}
+
+.art-of-pastries-text {
+  flex: 1 1 450px;
+  font-family: 'Alegreya', serif;
+}
+
+.art-of-pastries-text h1 {
+  font-size: 36px;
+  color: #a47d5e;
+  margin-bottom: 15px;
+}
+
+.art-of-pastries-text h2 {
+  font-size: 22px;
+  color: #b26e4a;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.art-of-pastries-text p {
+  line-height: 1.8;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+.art-of-pastries-text blockquote {
+  font-style: italic;
+  font-size: 16px;
+  color: #7b5b4c;
+  border-left: 4px solid #a47d5e;
+  padding-left: 15px;
+  margin-top: 20px;
+}
+
+/* ---------- Images Grid ---------- */
+.art-of-pastries-images {
+  flex: 1 1 400px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.art-of-pastries-images img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+  transition: transform 0.4s ease;
+}
+
+.art-of-pastries-images img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   PASTRY SECTIONS: DELIGHT & WHOLESOME ARTISAN
+========================================= */
+
+.pastry-section {
+  background-color: #fff8f0;
+  padding: 80px 10%;
+}
+
+.pastry-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ensures spacing between image and text */
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Default layout: image left, text right */
+.pastry-img {
+  flex: 1 1 50%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pastry-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.pastry-text {
+  flex: 1 1 50%;
+  font-family: 'Alegreya', serif;
+  color: #56534c;
+  text-align: left;
+}
+
+.pastry-text h2 {
+  font-size: 30px;
+  color: #a47d5e;
+  margin-bottom: 20px;
+}
+
+.pastry-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Reverse layout: text left, image right */
+.pastry-section.reverse .pastry-content {
+  flex-direction: row; /* flips positions */
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media screen and (max-width: 900px) {
+  .pastry-content,
+  .pastry-section.reverse .pastry-content {
+    flex-direction: column; /* stack on smaller screens */
+    text-align: center;
+  }
+
+  .pastry-img, .pastry-text {
+    flex: 1 1 100%;
+  }
+
+  .pastry-img {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pastry-section {
+    padding: 50px 6%;
+  }
+
+  .pastry-text h2 {
+    font-size: 26px;
+  }
+
+  .pastry-text p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+
+
+/* =========================================
+   2. FEATURED PASTRIES SECTION CARDS GRID
+========================================= */
+/* Import handwritten font for title */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.featured-pastries-grid {
+  max-width: 1200px;
+  margin: 100px auto 100px;
+  text-align: center; /* center title */
+  padding: 0 20px;
+
+}
+.featured-title {
+  font-size: 5rem !important; /* base size for large screens */
+  margin-bottom: 60px;
+  color: #a47d5e;
+  font-family: 'Pacifico', cursive !important; /* handwritten font */
+  letter-spacing: 1px;
+  text-align: center !important;
+}
+
+/* ---------- Pastry Gallery Cards ---------- */
+.pastry-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px; /* spacing from next section */
+}
+
+.pastry-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* stronger shadow */
+  width: 260px;
+  padding: 15px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+.pastry-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.pastry-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #56534c;
+  font-family: 'Alegreya', serif;
+}
+
+.pastry-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ---------- Hover: rotate + shake ---------- */
+.pastry-card:hover {
+  transform: rotate(-2deg) translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Shake keyframes */
+@keyframes shake {
+  0% { transform: rotate(-2deg) translateY(-6px) translateX(0); }
+  25% { transform: rotate(2deg) translateY(-6px) translateX(-2px); }
+  50% { transform: rotate(-2deg) translateY(-6px) translateX(2px); }
+  75% { transform: rotate(2deg) translateY(-6px) translateX(-2px); }
+  100% { transform: rotate(-2deg) translateY(-6px) translateX(0); }
+}
+
+/* Responsive: stack cards on small screens */
+@media screen and (max-width: 900px) {
+  .pastry-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* =========================================
+   Media Queries for Responsive Design
+========================================= */
+
+/* Large tablets / small laptops */
+@media screen and (max-width: 1024px) {
+  .featured-pastries h2 {
+    font-size: 2.7rem;
+    margin-bottom: 50px;
+  }
+
+  .pastry-gallery {
+    gap: 35px;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 900px) {
+  .featured-pastries h2 {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+  }
+
+  .pastry-gallery {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .pastry-card {
+    width: 45%; /* two cards per row */
+  }
+}
+
+/* Small tablets / large phones */
+@media screen and (max-width: 700px) {
+  .featured-pastries h2 {
+    font-size: 2rem;
+    margin-bottom: 35px;
+  }
+
+  .pastry-card {
+    width: 70%; /* one card per row, centered */
+  }
+}
+
+/* Phones */
+@media screen and (max-width: 480px) {
+  .featured-pastries h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .pastry-card {
+    width: 90%; /* almost full width */
+  }
+}
+
+/* Very small phones */
+@media screen and (max-width: 360px) {
+  .featured-pastries h2 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .pastry-card {
+    width: 95%;
+  }
+
+  .pastry-card h3 {
+    font-size: 18px;
+  }
+
+  .pastry-card p {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   3. FROM MY OVEN TO YOUR TABLE SECTION
+   (Inspiration-style closing section)
+========================================= */
+
+/* =========================================
+   PASSTRY INSPIRATION / FROM MY OVEN TO YOUR TABLE
+========================================= */
+.pastry-inspiration {
+  background-color: #f4e9dc;
+  padding: 80px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.pastry-inspiration-content {
+  display: flex;
+  flex-direction: row; /* horizontal layout */
+  align-items: center;
+  justify-content: flex-start;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+/* ---------- IMAGE ---------- */
+.pastry-image {
+  flex: 0 0 50%;
+  text-align: left;
+}
+
+.pastry-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pastry-image:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* ---------- TEXT ---------- */
+.pastry-text {
+  flex: 0 0 50%;
+  font-family: 'Alegreya', serif;
+  color: #56534c;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.2s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.pastry-text h1 {
+  font-size: 36px;
+  color: #a47d5e;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeInTitle 1.2s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.pastry-text p {
+  font-family: 'Proxima Nova';
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333;
+  max-width: 100%;
+  animation: fadeUp 1.2s ease forwards;
+  animation-delay: 0.8s;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeSlideIn {
+  0% { opacity: 0; transform: translateX(-60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInTitle {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media screen and (max-width: 900px) {
+  .pastry-inspiration-content {
+    flex-direction: column; /* stack image and text on small screens */
+    text-align: center;
+  }
+
+  .pastry-image, .pastry-text {
+    flex: 1 1 100%;
+    text-align: center;
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .pastry-image img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pastry-inspiration {
+    padding: 50px 6%;
+  }
+
+  .pastry-text h1 {
+    font-size: 26px;
+  }
+
+  .pastry-text p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+
+
+/* =========================================
+   4. RESPONSIVE DESIGN
+========================================= */
+@media screen and (max-width: 900px) {
+  /* Art of Pastry Making */
+  .art-of-pastries-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .art-of-pastries-images {
+    grid-template-columns: 1fr;
+  }
+
+  .art-of-pastries-text h1 {
+    font-size: 30px;
+  }
+
+  .art-of-pastries-text h2 {
+    font-size: 20px;
+  }
+
+  .art-of-pastries {
+    padding: 60px 8%;
+  }
+
+  /* Featured Pastries */
+  .pastry-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* From Oven Section */
+  .from-oven-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .from-oven-text, .from-oven-image {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .from-oven {
+    padding: 50px 6%;
+  }
+
+  .from-oven-text h1 {
+    font-size: 26px;
+  }
+
+  .from-oven-text p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .from-oven-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
+/* =========================================
+   5. FOOTER STYLING
+========================================= */
+body.pastries-page footer {
+  display: block;
+  padding: 70px 10%;
+  background-color: #f3f1e9;
+  text-align: center;
+}
+
+body.pastries-page footer a {
+  color: #35332f;
+}
+
+body.pastries-page footer .main-nav a:hover {
+  color: #a47d5e;
+}
+
+body.pastries-page .main-nav li:not(:last-of-type)::after {
+  content: '~';
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+body.pastries-page .main-nav li.dropdown:last-of-type::after {
+  content: '';
+}
