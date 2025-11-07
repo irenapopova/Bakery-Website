@@ -5,10 +5,30 @@
 body.courses-page {
   font-family: 'Alegreya', serif;
   background-color: #fff7f0;
-  color: #333;
-  margin: 0;
-  padding: 0;
+  
+  
 }
+
+/* Hero Section - keep title and text white */
+header.hero .intro h1 {
+  margin-top: 25px;  /* remove extra space above title */
+  margin-bottom: 10px; /* keep some space between title and text */
+}
+
+/* Ensure paragraph has space from the bread icon below */
+header.hero .intro p {
+  margin-bottom: 90px; /* increase this value to push paragraph away from bread icon */
+}
+
+.bread-icon {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -40%); /* less negative value moves it lower */
+  background: radial-gradient(circle, #fff 50%, transparent 0);
+}
+
+
 
 .courses-section {
   padding: 80px 20px;

@@ -14,13 +14,12 @@ header.hero .intro p {
   color: #fff;
 }
 
-/* Hero bread icon */
-header.hero .bread-icon img {
-  width: 80px;
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
+
+header.hero .intro h1 {
+  margin-top: 25px;  /* remove extra space above title */
+  margin-bottom: 10px; /* keep some space between title and text */
 }
+
 
 /* --- Art of Recipes Section --- */
 .art-of-cakes {
